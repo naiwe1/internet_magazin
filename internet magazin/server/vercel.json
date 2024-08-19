@@ -1,0 +1,30 @@
+{ 
+    "version": 2,
+    "env": {
+        "SQL_LOGGING": "true",
+        "SQL_DIALECT": "mysql",
+        "DATABASE_HOST": "localhost",
+        "DATABASE_PORT": "3306",
+        "DATABASE_USER": "root",
+        "DATABASE_PASSWORD": "1610",
+        "DATABASE_NAME": "test"
+    },
+    "builds": [
+        {
+            "src": "src/main.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "src/main.ts",
+            "methods": [
+                "GET",
+                "POST",
+                "PUT",
+                "DELETE"
+            ]
+        }
+    ]
+}
